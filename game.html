@@ -7,8 +7,8 @@
     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
     <!-- Icons fontawesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link type="text/css" rel="stylesheet" href="css/form-validation.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
@@ -25,14 +25,15 @@
 </head>
 <body class="bg-light">
     <div class="container">
-        <header class="py-5 text-center"></header>
+        <header class="py-5 text-center">
             <h1>WorldGames</h1>
+
             <div id="carouselWorldGames" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+                <ul class="carousel-indicators">
+                  <li data-target="#carouselWorldGames" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselWorldGames" data-slide-to="1"></li>
+                  <li data-target="#carouselWorldGames" data-slide-to="2"></li>
+                </ul>
 
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -46,127 +47,136 @@
                   </div>
                 </div>
 
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#carouselWorldGames" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#carouselWorldGames" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
               </div>
+
+              <nav class="nav nav-tabs my-3">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu1" aria-controls="nav-game"
+                    aria-selected="true">Gestió de jocs</a></li>
+              </nav>
+
         </header>
-    </div>
-    <!-- Tab panes -->
+
+        <!-- Tab panes -->
     <div id="container-form" class="tab-content">
-        <div id="menu1" class="container tab-pane active" role="tabpanel" aria-labelledby="nav-game-tab">
-  
-          <!-- Formulari game -->
-          <!-- Validació anternativa: 
-            <form id="frm-game" name="frm-game" action="javascript:addGame()" method="post" class="needs-validation" novalidate >
-          -->
-          <form id="frm-game" name="frm-game" action="" method="post">
-            <input type="hidden" id="game_id" name="id" value="" />
-            <h2>Fitxa del joc</h2>
-            <!-- Primera fila de camps del GRID-->
-            <div class="row">
-              <div class="col-md-4">
-                <label for="game_name">Nom</label>
-                <input type="text" class="form-control" id="game_name" placeholder="" max="50" value=""
-                  required="required" />
-                <div class="invalid-feedback">Nom del joc obligatori</div>
-              </div>
-  
-              <div class="col-md-4">
-                <label for="game_release">Data llançament</label>
-                <input id="game_release" type="date" class="form-control" max="10" placeholder="" value=""
-                  required="required" />
-                <small class="form-text text-muted">Format dd/mm/aaaa</small>
-                <div class="invalid-feedback">Data obligatoria</div>
-              </div>
-  
-              <div class="col-md-4">
-                <label for="game_pegi">Pegi</label>
-                <input type="number" class="form-control" id="game_pegi" placeholder="" max="18" value=""
-                  required="required" />
-                <small class="form-text text-muted">Màxim 18 anys</small>
-                <div class="invalid-feedback">Pegi obligatori</div>
-              </div>
+      <div id="menu1" class="container tab-pane active" role="tabpanel" aria-labelledby="nav-game-tab">
+
+        <!-- Formulari game -->
+        <!-- Validació anternativa: 
+          <form id="frm-game" name="frm-game" action="javascript:addGame()" method="post" class="needs-validation" novalidate >
+        -->
+        <form id="frm-game" name="frm-game" action="" method="post">
+          <input type="hidden" id="game_id" name="id" value="" />
+          <h2>Fitxa del joc</h2>
+          <!-- Primera fila de camps del GRID-->
+          <div class="row">
+            <div class="col-md-4">
+              <label for="game_name">Nom</label>
+              <input type="text" class="form-control" id="game_name" placeholder="" max="50" value=""
+                required="required" />
+              <div class="invalid-feedback">Nom del joc obligatori</div>
             </div>
-  
-            <!-- Segona fila de camps del GRID-->
-            <div class="row my-2" role="tabpanel" aria-labelledby="nav-player-tab">
-              <div class="form-group col-md-6">
-                <label for="game_developer">Desenvolupador</label>
-                <input type="text" class="form-control" id="game_developer" placeholder="" value="" required="required" />
-                <div class="invalid-feedback">Desenvolupador obligatori</div>
-              </div>
-  
-              <div class="form-group col-md-6" role="tabpanel" aria-labelledby="nav-tournament-tab">
-                <label for="game_genre">Gènere</label>
-                <select class="form-control" id="game_gnre" name="game_genre">
-                  <option value="action">Acció</option>
-                  <option value="adventure">Aventura</option>
-                </select>
-              </div>
+
+            <div class="col-md-4">
+              <label for="game_release">Data llançament</label>
+              <input id="game_release" type="date" class="form-control" max="10" placeholder="" value=""
+                required="required" />
+              <small class="form-text text-muted">Format dd/mm/aaaa</small>
+              <div class="invalid-feedback">Data obligatoria</div>
             </div>
-  
-            <hr />
-            <!-- Botons -->
-            <div class="text-right">
-              <!--<button id="b_addGame" class="button btn-primary btn-lg" type="submit">Nou joc</button>-->
-              <button id="btn-addGame" class="button btn-primary btn-lg" type="button">
-                <i class="far fa-edit"></i> Nou joc
-              </button>
+
+            <div class="col-md-4">
+              <label for="game_pegi">Pegi</label>
+              <input type="number" class="form-control" id="game_pegi" placeholder="" max="18" value=""
+                required="required" />
+              <small class="form-text text-muted">Màxim 18 anys</small>
+              <div class="invalid-feedback">Pegi obligatori</div>
             </div>
-          </form>
-        </div>
-      </div>
-  
-      <hr />
-      <!-- Llista jocs -->
-      <div id="container-games">
-        <h2> Llista jocs </h2>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Desenvolupador</th>
-              <th scope="col">Llançament</th>
-              <th scope="col">PEGI</th>
-              <th scope="col">Gènere</th>
-            </tr>
-          </thead>
-          <tbody id="gamelist"></tbody>
-        </table>
-      </div>
-  
-      <!-- Footer info -->
-      <footer class="py-5 text-center">&copy;YoungPro 2019 - prototipus -</footer>
-    </div>
-  
-  
-    <!-- Modal width form information -->
-    <div id="modal-message" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalScrollableTitle">Avís</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+          </div>
+
+          <!-- Segona fila de camps del GRID-->
+          <div class="row my-2" role="tabpanel" aria-labelledby="nav-player-tab">
+            <div class="form-group col-md-6">
+              <label for="game_developer">Desenvolupador</label>
+              <input type="text" class="form-control" id="game_developer" placeholder="" value="" required="required" />
+              <div class="invalid-feedback">Desenvolupador obligatori</div>
+            </div>
+
+            <div class="form-group col-md-6" role="tabpanel" aria-labelledby="nav-tournament-tab">
+              <label for="game_genre">Gènere</label>
+              <select class="form-control" id="game_gnre" name="game_genre">
+                <option value="action">Acció</option>
+                <option value="adventure">Aventura</option>
+              </select>
+            </div>
+          </div>
+
+          <hr />
+          <!-- Botons -->
+          <div class="text-right">
+            <!--<button id="b_addGame" class="button btn-primary btn-lg" type="submit">Nou joc</button>-->
+            <button id="btn-addGame" class="button btn-primary btn-lg" type="button">
+              <i class="far fa-edit"></i> Nou joc
             </button>
           </div>
-          <div id="txt-message" class="modal-body">
-            Tots els camps són obligatoris
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
-          </div>
+        </form>
+      </div>
+    </div>
+
+    <hr />
+    <!-- Llista jocs -->
+    <div id="container-games">
+      <h2> Llista jocs </h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Desenvolupador</th>
+            <th scope="col">Llançament</th>
+            <th scope="col">PEGI</th>
+            <th scope="col">Gènere</th>
+          </tr>
+        </thead>
+        <tbody id="gamelist"></tbody>
+      </table>
+    </div>
+
+    <!-- Footer info -->
+    <footer class="py-5 text-center">&copy;WorldGames - prototipus -</footer>
+  </div>
+
+
+  <!-- Modal width form information -->
+  <div id="modal-message" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Avís</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="txt-message" class="modal-body">
+          Tots els camps són obligatoris
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
         </div>
       </div>
     </div>
+  </div>
+    </div>
+
+    
   
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
