@@ -12,6 +12,7 @@
     <!-- Custom styles for this template -->
     <link type="text/css" rel="stylesheet" href="css/form-validation.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="css/game.css">
     <style media="screen">
         .carousel-inner img {
           width: 100%;
@@ -23,10 +24,10 @@
         }
       </style>
 </head>
-<body class="bg-light">
+<body class="bg-light" style="background: linear-gradient(30deg, crimson,sienna, royalblue, indianred, purple);">
     <div class="container">
         <header class="py-5 text-center">
-            <h1>WorldGames</h1>
+            <h1 style="color: aliceblue;">WorldGames</h1>
 
             <div id="carouselWorldGames" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
@@ -37,13 +38,25 @@
 
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./img/Shadow-Tomb-Raider-slider.jpg" height="200" width="930" alt="Game1">
+                    <img src="./img/Shadow-Tomb-Raider-slider.jpg" height="200" width="930" alt="TombRaider">
+                    <div class="carousel-caption">
+                      <h3>Shadow of The Tomb Raider</h3>
+                      <p>Guia a Lara a la darrera entrega de la saga!</p>
+                    </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/Soul-Calibur-slider.jpg" height="200" width="930" alt="Game2">
+                    <img src="./img/Soul-Calibur-slider.jpg" height="200" width="930" alt="SoulCalibur">
+                    <div class="carousel-caption">
+                      <h3>Soul Calibur VI</h3>
+                      <p>Disfruta del major joc de lluita amb Geralt de Rivia!</p>
+                    </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/Resident-Evil-slider.jpg" height="200" width="930" alt="Game3">
+                    <img src="./img/Resident-Evil-slider.jpg" height="200" width="930" alt="ResidentEvil">
+                    <div class="carousel-caption">
+                      <h3>Resident Evil 3 Remaster</h3>
+                      <p>Reviu el terror amb el darrer remaster de RE!</p>
+                    </div>
                   </div>
                 </div>
 
@@ -59,20 +72,24 @@
 
               <nav class="nav nav-tabs my-3">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu1" aria-controls="nav-game"
-                    aria-selected="true">Gestió de jocs</a></li>
+                    aria-selected="true" style="margin-right: 10px;">Gestió de jocs</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu1" aria-controls="nav-game"
+                    aria-selected="true" style="margin-right: 10px;">Jugadors</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu1" aria-controls="nav-game"
+                    aria-selected="true">Torneig</a></li>
               </nav>
 
         </header>
 
         <!-- Tab panes -->
     <div id="container-form" class="tab-content">
-      <div id="menu1" class="container tab-pane active" role="tabpanel" aria-labelledby="nav-game-tab">
+      <div id="menu1" class="container tab-pane active" role="tabpanel" aria-labelledby="nav-game-tab" style="color: aliceblue;">
 
         <!-- Formulari game -->
-        <!-- Validació anternativa: 
-          <form id="frm-game" name="frm-game" action="javascript:addGame()" method="post" class="needs-validation" novalidate >
-        -->
-        <form id="frm-game" name="frm-game" action="" method="post">
+        <!-- Validació anternativa:
+          <form id="frm-game" name="frm-game" action="javascript:addGame()" method="post" class="needs-validation" novalidate> -->
+        
+          <form id="frm-game" name="frm-game" action="" method="post">
           <input type="hidden" id="game_id" name="id" value="" />
           <h2>Fitxa del joc</h2>
           <!-- Primera fila de camps del GRID-->
@@ -88,7 +105,7 @@
               <label for="game_release">Data llançament</label>
               <input id="game_release" type="date" class="form-control" max="10" placeholder="" value=""
                 required="required" />
-              <small class="form-text text-muted">Format dd/mm/aaaa</small>
+              <small class="form-text text-muted" style="color: aliceblue;">Format dd/mm/aaaa</small>
               <div class="invalid-feedback">Data obligatoria</div>
             </div>
 
@@ -96,7 +113,7 @@
               <label for="game_pegi">Pegi</label>
               <input type="number" class="form-control" id="game_pegi" placeholder="" max="18" value=""
                 required="required" />
-              <small class="form-text text-muted">Màxim 18 anys</small>
+              <small class="form-text text-muted" style="color: aliceblue;">Màxim 18 anys</small>
               <div class="invalid-feedback">Pegi obligatori</div>
             </div>
           </div>
@@ -132,9 +149,9 @@
 
     <hr />
     <!-- Llista jocs -->
-    <div id="container-games">
-      <h2> Llista jocs </h2>
-      <table class="table table-striped">
+    <div id="container-games" style="color: aliceblue;">
+      <h2 style="color: aliceblue;"> Llista jocs </h2>
+      <table class="table table-striped" style="color: aliceblue;">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -150,7 +167,7 @@
     </div>
 
     <!-- Footer info -->
-    <footer class="py-5 text-center">&copy;WorldGames - prototipus -</footer>
+    <footer class="py-5 text-center" style="color: aliceblue;">&copy;WorldGames - prototipus -</footer>
   </div>
 
 
@@ -191,6 +208,7 @@
   
   
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/form-validation.js"></script>
   
   
     <!--
